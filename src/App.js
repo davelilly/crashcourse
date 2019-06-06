@@ -15,8 +15,8 @@ class App extends Component {
       },
       {
         id: 2,
-        title: 'tdinner',
-        completed: false
+        title: 'dinner',
+        completed: true
       },
       {
         id: 3,
@@ -26,14 +26,18 @@ class App extends Component {
     ]
   }
   
+  markComplete = (id) => {
+    console.log(id)
+  }
+
   render(){
-  return (
-    <div className="App">
-      <h1>App2s</h1>
-      <Todos todo={this.state.todos}/>
-    </div>
-  );
-}
+    return (
+      <div className="App">
+        <h1>ToDo List</h1>
+        <Todos todos={this.state.todos} markComplete={this.markComplete}/>
+      </div>
+    );
+  }
 }
 
 export default App;
